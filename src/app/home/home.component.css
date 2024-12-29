@@ -1,0 +1,46 @@
+.banner-section {
+    background-image: url("https://res.cloudinary.com/satishkumarpallapu/image/upload/v1664454154/banner-image-gif-1_l6udbo.gif");
+    background-size: cover;
+    min-height: 88vh;
+    max-height: 90vh;
+    min-width: 60vw;
+    font-family: "bree serif";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+.banner-card {
+    width: 60%;
+    height: 18%;
+    border-radius: 10px;
+    background-color: rgba(246, 238, 238, 0.3);
+    padding-top: 20px;
+    color: rgb(253, 165, 0);
+    font-weight: 900;
+    animation-name: animate;
+    animation-duration: 3s;
+}
+
+.banner-card::after {
+    color: #fff;
+    animation-name: animate;
+    animation-duration: 1s;
+    animation-direction: reverse;
+}
+
+@keyframes animate {
+    0% {
+        width: 20%;
+        height: 90%;
+        color: #fff;
+        background-color: rgba(246, 238, 238, 0);
+    }
+
+    100% {
+        width: 60%;
+        height: 20%;
+    }
+}

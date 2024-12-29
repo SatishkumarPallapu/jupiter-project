@@ -1,0 +1,113 @@
+<div class="container-flex main-container ml-4 mr-5">
+    <div class="row">
+        <div class="col-12 pt-3 pl-2 text-primary" style="font-size: 'Times New Roman';font-weight: 800;">
+            <h3 class="text-center text-warning m-0 p-0 pb-2">Employe L&D Details</h3>
+        </div>
+        <div class="col col-12 col-md-3 h-100 mt-3 pr-sm-0 p-md-0 pr-xl-0" style="height: 100vh;">
+            <div class="p-2 profile-card rounded-lg">
+                <svg *ngIf="empId != 4021" xmlns="http://www.w3.org/2000/svg" width="150" height="130"
+                    fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                </svg>
+                <img *ngIf="empId == 4021"
+                    src="https://res.cloudinary.com/satishkumarpallapu/image/upload/v1668755690/satishKumar-image_xsaucf.jpg"
+                    alt="emp_image">
+                <h5 class="m-0 p-1">{{empName}}</h5>
+                <h5 class="m-0 p-1"> {{empId}}</h5>
+                <h6 class="email w-100 m-0 pt-2 m-0">{{email}}</h6>
+                <a [routerLink]="['/employe-list', id, 'edit']" class="text-decoration-none bg-light m-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-pencil-square text-secondary" viewBox="0 0 16 16">
+                        <path
+                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                        <path fill-rule="evenodd"
+                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="learning-card mt-3 p-3 pl-4 border rounded col col-12 col-md-9">
+            <h4 class="">Information</h4>
+            <ul class="d-flex justify-content-start flex-wrap align-items-start mb-3">
+                <li>
+                    <label>Batch</label>
+                    <h6>{{employeLearningData.training_batch}}</h6>
+                </li>
+                <li>
+                    <label>Skills</label>
+                    <h6> {{employeLearningData.foundation_track}}</h6>
+                </li>
+                <li>
+                    <label> Foundation Start Date</label>
+                    <h6> {{employeLearningData.foundation_start_date}}</h6>
+                </li>
+                <li>
+                    <label>Foundation End Date</label>
+                    <h6> {{employeLearningData.foundation_end_date}}</h6>
+                </li>
+            </ul>
+
+            <h4 class="text-dec">Performance</h4>
+            <ul class="d-flex flex-row justify-content-start mb-3">
+                <!-- <li>
+                    <label>Status</label>
+                    <h6 [class]="color">
+                        {{employeLearningData.score >= 70 ? "Pass" : "Fail"}}</h6>
+                </li> -->
+                <li>
+                    <label>Score</label>
+                    <!-- [class]="employeLearningData.score >= 70 ? green : red;" -->
+                    <h6 [class]="color"> {{employeLearningData.score}}</h6>
+                </li>
+            </ul>
+
+            <h4 class="text-dec">Certification</h4>
+            <ul class="d-flex justify-content-start flex-wrap align-items-start mb-3">
+                <li>
+                    <label>Certificate 1</label>
+                    <h6> {{employeLearningData.certification}}</h6>
+                </li>
+                <li>
+                    <label>Certificate 2</label>
+                    <h6> {{employeLearningData.certification_two}}</h6>
+                </li>
+                <li>
+                    <label>Certificate 3</label>
+                    <h6> {{employeLearningData.certification_three}}</h6>
+                </li>
+            </ul>
+
+            <h4 class="text-dec">Advance Training</h4>
+            <ul class="d-flex justify-content-start flex-wrap align-items-start mb-3 pb-3">
+                <li>
+                    <label>Start Date</label>
+                    <h6> {{employeLearningData.advance_training_start_date}}</h6>
+                </li>
+                <li>
+                    <label>End Date</label>
+                    <h6> {{employeLearningData.advance_training_end_date}}</h6>
+                </li>
+
+                <li>
+                    <label>ALP Start Date</label>
+                    <h6> {{employeLearningData.alp_start_date}}</h6>
+                </li>
+                <li>
+                    <label>ALP End Date</label>
+                    <h6> {{employeLearningData.alp_end_date}}</h6>
+                </li>
+                <li>
+                    <label>Training Completion Date</label>
+                    <h6> {{employeLearningData.alp_end_date}}</h6>
+                </li>
+            </ul>
+
+            <h4 class="text-dec">L&D Comments</h4>
+            <div class="pl-4 mb-5 pb-5">
+                {{employeLearningData.l_and_d_comments}}
+            </div>
+        </div>
+    </div>
+</div>

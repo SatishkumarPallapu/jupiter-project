@@ -1,0 +1,192 @@
+<div class="p-4">
+    <div class="btn-grou  d-flex justify-content-between">
+        <h3 class="ml-2 text-center text-danger" style="font-family: 'bree serif'; font-weight: 700;">Edit Employe</h3>
+    </div>
+    <form [formGroup]="employeForm" style="max-height:70vh;overflow: auto;font-family: 'Times new roman';"
+        class="pl-3 pr-3 shadow-sm rounded-lg" (ngSubmit)="onSubmit()">
+        <!-- <div class>
+        <h4>Profile</h4>
+        <div class="d-flex flex-row justify-content-start border flex-wrap">
+          <div class="form-group ml-4">
+            <label for="emp-id">Employe ID{{employeData.mobile}}/</label>
+            <input type="text" class="form-control" id="emp-id" placeholder="Employe ID" formControlName="empId"/>
+          </div>
+          <div class="form-group ml-4 w-50">
+            <label for="emp_name">Employe Name</label>
+            <input type="text" class="form-control " id="emp_name" placeholder="Employe Name" formControlName="empName"/>
+          </div>
+          <div class="form-group ml-4">
+            <label for="emp_contact">Contact</label>
+            <input type="text" class="form-control " id="emp_contact" placeholder="Employe Contact" formControlName="empContact"/>
+          </div>
+          <div class="form-group ml-4 w-50">
+            <label for="emp_email">Email</label>
+            <input type="text" class="form-control " id="emp_email" placeholder="Employe Email" formControlName="empEmail"/>
+          </div><br>
+          <div class="form-group ml-4 w-25">
+            <label for="emp_batch">Training Batch</label>
+            <select id="emp_batch" class="form-control text-center" formControlName="empBatch">
+              <option id="" value="Batch1" selected>Batch 1</option>
+              <option id="" value="Batch2" >Batch 2</option>
+              <option id="" value="Batch3">Batch 3</option>
+            </select>
+          </div>
+        </div>
+      </div> -->
+
+        <div class="p-3">
+
+
+            <div class="d-flex mb-2 justify-content-between p-2">
+                <h4>Certifications</h4>
+            </div>
+            <div class="form-group border d-flex justify-content-between p-2">
+                <label for="emp_certificate" class="mr-4 mt-2 ml-4">Certificate 1</label>
+                <select id="emp_certificate" class="form-control text-center w-75" formControlName="certification">
+                    <option value="Amazon Web Services" selected>Amazon Web Services</option>
+                    <option value="Microsoft Azure Fundamentals - 101">Microsoft Azure Fundamentals - 101</option>
+                    <option value="Microsoft Azure 900">Microsoft Azure 900</option>
+                </select>
+            </div>
+            <div class="form-group border d-flex justify-content-between p-2">
+                <label for="emp_certificate_two" class="mr-4 mt-2 ml-4">Certificate 2</label>
+                <select id="emp_certificate_two" class="form-control text-center w-75"
+                    formControlName="certification_two">
+                    <option value="Amazon Web Services" selected>Amazon Web Services</option>
+                    <option value="Microsoft Azure Fundamentals - 101">Microsoft Azure Fundamentals - 101</option>
+                    <option value="Microsoft Azure 900">Microsoft Azure 900</option>
+                </select>
+            </div>
+            <div class="form-group border d-flex justify-content-between p-2">
+                <label for="emp_certificate_three" class="mr-4 mt-2 ml-4">Certificate 3</label>
+                <select id="emp_certificate_three" class="form-control text-center w-75"
+                    formControlName="certification_three">
+                    <option value="Amazon Web Services" selected>Amazon Web Services</option>
+                    <option value="Microsoft Azure Fundamentals - 101">Microsoft Azure Fundamentals - 101</option>
+                    <option value="Microsoft Azure 900">Microsoft Azure 900</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pl-3 pr-3 pb-3 ">
+            <h5 class="pl-2">Skills And Trainings</h5>
+            <div class="form-group border p-2  d-flex justify-content-between p-2">
+                <label for="emp_batch" class="mr-4 mt-2 ml-4">Batch</label>
+                <select id="emp_batch" class="form-control text-center w-75" formControlName="training_batch">
+                    <option value="Batch1" selected>Batch 1</option>
+                    <option value="Batch2">Batch 2</option>
+                    <option value="Batch3">Batch 3</option>
+                    <!-- <option *ngFor="let batch of batches" [ngValue]="batch" checked>{{batch}}</option> -->
+                </select>
+            </div>
+            <div class="form-group  border p-2 d-flex justify-content-between">
+                <label for="emp_skill" class="mr-4 mt-2 ml-4">Final Skills</label>
+                <select id="emp_skill" class="form-control text-center w-75" formControlName="foundation_track">
+                    <option value="Java" selected>Java</option>
+                    <option value="UI Angular">UI Angular</option>
+                    <option value="UI React">UI React</option>
+                    <option value="C++" selected>C++</option>
+                    <option value="Java Full Stack">Java Full Stack</option>
+                    <option value="Python">UI React</option>
+                    <option value=".Net">.Net</option>
+                </select>
+            </div>
+
+            <!-- <div class="form-group">
+          <h6>Mapped Skills</h6>
+          <input class="form-control" type="text" id="emp_mapped_skill" formControlName="empMappedSkill">
+        </div> -->
+
+            <div class="form-group">
+                <label for="fs_date">Foundation Start Date</label>
+                <input type="date" name="fs_date" class="form-control" id="foundation_start_date"
+                    formControlName="foundation_start_date" />
+            </div>
+
+            <div class="form-group">
+                <label for="fe_date">Foundation End Date</label>
+                <input type="date" class="form-control" id="fe_date" name="foundation_end_date"
+                    formControlName="foundation_end_date" />
+            </div>
+
+            <div class="form-group d-flex justify-content-between">
+                <div class="">
+                    <label for="emp_score">Score</label>
+                    <input type="number" class="form-control" id="emp_score" name="score" formControlName="score">
+                    <div>
+                        <p class="red" *ngIf="employeForm.controls.score.errors?.required">
+                            *Please enter the value
+                        </p>
+                        <p class="red"
+                            *ngIf="(employeForm.controls.score.errors?.max.actual > employeForm.controls.score.errors?.max.max)">
+                            *Please enter value less than 100
+                        </p>
+                        <p class="red"
+                            *ngIf="(employeForm.controls.score.errors?.min.actual < employeForm.controls.score.errors?.min.min)">
+                            *Value should be greater or equal to 0
+                        </p>
+                    </div>
+                </div>
+                <div class="w-75 ml-2">
+                    <label>Performance</label>
+                    <input type="text" class="form-control" id="emp_performance" name="foundation_performance"
+                        formControlName="foundation_performance" [value]="" disabled>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="mb-3">
+                    <label>Advance Training Start Date</label>
+                    <input type="date" class="form-control" id="ats_date" name="advance_training_start_date"
+                        formControlName="advance_training_start_date">
+                </div>
+
+                <div class="mb-3">
+                    <label>Advance Training End Date</label>
+                    <input type="date" class="form-control" id="ate_date" name="advance_training_end_date"
+                        formControlName="advance_training_end_date">
+                </div>
+
+                <div class="d-flex flex-wrap">
+                    <div class="mb-3 w-50">
+                        <label>ALP Start Date</label>
+                        <input type="date" class="form-control" id="alps_date" name="alp_start_date"
+                            formControlName="alp_start_date">
+                    </div>
+
+                    <div class="mb-3 w-50">
+                        <label>ALP End Date</label>
+                        <input type="date" class="form-control" id="alpe_date" name="alp_end_date"
+                            formControlName="alp_end_date">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Training Completion Date</label>
+                    <input type="date" class="form-control" id="tc_date" name="training_completion_date"
+                        formControlName="training_completion_date">
+                </div>
+
+                <div class="mb-3 form-group">
+                    <label>Training</label>
+                    <select class="form-control">
+                        <option selected value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>L&D Comments</label>
+                    <textarea columns="67" rows="4" class="form-control" id="l_d_comments" name="l_and_d_comments"
+                        formControlName="l_and_d_comments"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="">
+            <button type="button" class="btn btn-info" (click)="onSubmit()">Submit</button>
+        </div>
+    </form>
+
+
+</div>

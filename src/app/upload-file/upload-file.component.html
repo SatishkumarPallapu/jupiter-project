@@ -1,0 +1,19 @@
+<div class="container m-auto pt-5">
+    <div class="row border p-5 text-center">
+        <div class="col-12 mb-4">
+            <h4 style="font-family: 'bree Serif';font-weight:900;">Upload Bulk Data</h4>
+        </div>
+        <div class="col-12 ml-5">
+            <input type="file" (change)="onUpload($event)"
+                accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                style="padding-left: 10px;">
+            <br>
+            <span class="text-secondary">(.csv files only)</span>
+            <p style="margin-right:100px;" class="p-3">Number of employes created
+                <span>
+                    <h2>{{count}}</h2>
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
